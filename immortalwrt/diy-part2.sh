@@ -16,6 +16,10 @@ rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-passwall2}
 git clone https://github.com/xiaorouji/openwrt-passwall-packages -b main package/passwall_packages
 git clone https://github.com/xiaorouji/openwrt-passwall -b main package/passwall_luci
 
+# 自定义直连规则
+cp -rf ${GITHUB_WORKSPACE}/passwall_conf/direct_host package/passwall_luci/luci-app-passwall/root/usr/share/passwall/rules/direct_host
+cp -rf ${GITHUB_WORKSPACE}/passwall_conf/direct_ip package/passwall_luci/luci-app-passwall/root/usr/share/passwall/rules/direct_ip
+
 # 升级部分软件包版本，以确保正常编译
 rm -rf feeds/packages/utils/unzip
 git clone https://github.com/sbwml/feeds_packages_utils_unzip feeds/packages/utils/unzip
