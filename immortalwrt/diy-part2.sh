@@ -21,11 +21,5 @@ cp -rf ${GITHUB_WORKSPACE}/passwall_conf/direct_host package/passwall_luci/luci-
 cp -rf ${GITHUB_WORKSPACE}/passwall_conf/direct_ip package/passwall_luci/luci-app-passwall/root/usr/share/passwall/rules/direct_ip
 
 # 升级部分软件包版本，以确保正常编译
-rm -rf feeds/packages/utils/unzip
-git clone https://github.com/sbwml/feeds_packages_utils_unzip feeds/packages/utils/unzip
-
 rm -rf feeds/packages/lang/golang
-git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
-
-rm -rf feeds/packages/net/curl
-git clone https://github.com/sbwml/feeds_packages_net_curl feeds/packages/net/curl
+git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
