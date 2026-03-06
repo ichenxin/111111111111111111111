@@ -23,3 +23,5 @@ cp -rf ${GITHUB_WORKSPACE}/passwall_conf/direct_ip package/passwall_luci/luci-ap
 # 升级部分软件包版本，以确保正常编译
 rm -rf feeds/packages/lang/golang
 git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
+
+sed -i 's/--set=llvm\.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
